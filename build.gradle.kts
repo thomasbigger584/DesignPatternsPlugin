@@ -24,6 +24,14 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation("org.apache.commons:commons-lang3:3.0")
+    implementation("commons-io:commons-io:2.6")
+}
+
+
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
     pluginName.set(properties("pluginName"))

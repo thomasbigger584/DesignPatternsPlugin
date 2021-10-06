@@ -1,18 +1,33 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.thomasbigger584.designpatternsplugin</id>
+    <id>com.twb.designpatternsplugin</id>
     <name>DesignPatternsPlugin</name>
     <vendor>thomasbigger584</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.thomasbigger584.designpatternsplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.thomasbigger584.designpatternsplugin.services.MyProjectService"/>
+        <!--        <applicationService serviceImplementation="com.twb.designpatternsplugin.services.MyApplicationService"/>-->
+        <!--        <projectService serviceImplementation="com.twb.designpatternsplugin.services.MyProjectService"/>-->
+
+        <notificationGroup id="Download Design Patterns" displayType="BALLOON"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.thomasbigger584.designpatternsplugin.listeners.MyProjectManagerListener"
+        <listener class="com.twb.designpatternsplugin.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="com.twb.designpatternsplugin.actions.DownloadDesignPatternsAction"
+                class="com.twb.designpatternsplugin.actions.DownloadDesignPatternsAction" text="Download Design Patterns"
+                description="Open file with application">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>
